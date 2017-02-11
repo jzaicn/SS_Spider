@@ -1,0 +1,35 @@
+{
+  "strategy": null,
+  "index": 2,
+  "global": false,
+  "enabled": true,
+  "shareOverLan": false,
+  "isDefault": false,
+  "localPort": 1080,
+  "pacUrl": null,
+  "useOnlinePac": false,
+  "availabilityStatistics": false,
+  "config": [
+    {
+      "server": "us.ssip.club",
+      "server_port": "443",
+      "password": "12157327",
+      "method": "",
+      "remarks": ""
+    },
+    {
+      "server": "jp.ssip.club",
+      "server_port": "23333",
+      "password": "24486331",
+      "method": "",
+      "remarks": ""
+    },
+    {
+      "server": "usa.ssip.club",
+      "server_port": "443",
+      "password": "55630083",
+      "method": "",
+      "remarks": ""
+    }
+  ]
+}
