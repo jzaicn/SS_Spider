@@ -53,32 +53,21 @@ namespace MyDotnetSipder
         /// <returns></returns>
         public static void SS_Save_Server_Result_Json(string path)
         {
-            JObject jobj = new JObject();
-            jobj["strategy"] = null;
-            jobj["index"] = 2;
-            jobj["global"] = false;
-            jobj["enabled"] = true;
-            jobj["shareOverLan"] = false;
-            jobj["isDefault"] = false;
-            jobj["localPort"] = 1080;
-            jobj["pacUrl"] = null;
-            jobj["useOnlinePac"] = false;
-            jobj["availabilityStatistics"] = false;
-
-
-            JArray jconfig = new JArray();
-            jobj.Add("config", jconfig);
+            JObject jobj = JObject.Parse("{\"configs\":[],\"strategy\":\"com.shadowsocks.strategy.ha\",\"index\":-1,\"global\":false,\"enabled\":false,\"shareOverLan\":false,\"isDefault\":false,\"localPort\":1080,\"pacUrl\":null,\"useOnlinePac\":false,\"secureLocalPac\":true,\"availabilityStatistics\":false,\"autoCheckUpdate\":true,\"checkPreRelease\":false,\"isVerboseLogging\":false,\"logViewer\":{\"topMost\":false,\"wrapText\":false,\"toolbarShown\":false,\"Font\":\"Consolas, 8pt\",\"BackgroundColor\":\"Black\",\"TextColor\":\"White\"},\"proxy\":{\"useProxy\":false,\"proxyType\":0,\"proxyServer\":\"\",\"proxyPort\":0,\"proxyTimeout\":3},\"hotkey\":{\"SwitchSystemProxy\":\"\",\"SwitchSystemProxyMode\":\"\",\"SwitchAllowLan\":\"\",\"ShowLogs\":\"\",\"ServerMoveUp\":\"\",\"ServerMoveDown\":\"\"}}");
+            
             foreach (SS_Server_Model model in SS_Server_Model_Pipeline.SrvrResult)
             {
                 JObject server = new JObject();
 
                 server["server"] = model.SrvAddr;
-                server["server_port"] = model.SrvPort;
+                server["server_port"] = Convert.ToInt32(model.SrvPort);
                 server["password"] = model.SrvPass;
                 server["method"] = model.SrvMethod;
                 server["remarks"] = model.SrvRemark;
+                server["auth"] = false;
+                server["timeout"] = 5;
 
-                jconfig.Add(server);
+                ((JArray)jobj["configs"]).Add(server);
             }
 
             System.IO.File.WriteAllText(path,jobj.ToString());

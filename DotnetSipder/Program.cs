@@ -20,6 +20,10 @@ namespace MyDotnetSipder
                 bool flagRuning = true;
                 foreach (SS_Server_Setting_Model item in SS_Server_Factory.SrvModels)
                 {
+                    if (args.Count() > 1)
+                    {
+                        flagRuning = true;
+                    }
                     flagRuning = !SS_Server_Factory.Find_SS_Processor_Pipline(item.SrvAddr, new SS_Server_Regex_Processor(item.RegexPattern), flagRuning);
                 }
 
