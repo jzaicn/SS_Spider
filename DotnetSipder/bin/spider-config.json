@@ -1,6 +1,10 @@
 {
   "SrvList": [
     {
+      "SrvAddr":"https://www.ssuu.org/sstest/",
+      "RegexPattern":"<div.*?服务器地址:(?<SrvAddr>.*?)</h4>.*?端口:(?<SrvPort>.*?)</h4>.*?密码:(?<SrvPass>.*?)</h4>.*?加密方式:(?<SrvMethod>.*?)</h4>.*?</div>",
+    },
+    {
       "SrvAddr": "https://freevpnss.cc/",
       "RegexPattern": "<div.*?址：(?<SrvAddr>.*?)</p>.*?口：(?<SrvPort>.*?)</p>.*?码：(?<SrvPass>.*?)</p>.*?</div>",
     },
@@ -8,5 +12,6 @@
       "SrvAddr": "https://freessr.xyz/",
       "RegexPattern": "<div.*?<h4>服务器地址:(?<SrvAddr>.*?)</h4>.*?<h4>端口:(?<SrvPort>.*?)</h4>.*?<h4>密码:(?<SrvPass>.*?)</h4>.*?<h4>加密方式:(?<SrvMethod>.*?)</h4>.*?</div>",
     },
+
   ]
 }
