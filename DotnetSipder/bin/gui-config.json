@@ -11,24 +11,24 @@
   "availabilityStatistics": false,
   "config": [
     {
-      "server": "us.ssip.club",
+      "server": "a.shenjiasu.net",
       "server_port": "443",
       "password": "12157327",
-      "method": "",
+      "method": "AES-256-CFB",
       "remarks": ""
     },
     {
-      "server": "jp.ssip.club",
-      "server_port": "23333",
-      "password": "24486331",
-      "method": "",
-      "remarks": ""
-    },
-    {
-      "server": "usa.ssip.club",
+      "server": "b.shenjiasu.net",
       "server_port": "443",
       "password": "55630083",
-      "method": "",
+      "method": "AES-256-CFB",
+      "remarks": ""
+    },
+    {
+      "server": "c.shenjiasu.net",
+      "server_port": "23333",
+      "password": "24486331",
+      "method": "RC4-MD5",
       "remarks": ""
     }
   ]

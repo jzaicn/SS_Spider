@@ -1,0 +1,1 @@
+call Release\MyDotnetSipder.exe
