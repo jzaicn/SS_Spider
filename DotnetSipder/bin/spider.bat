@@ -1,1 +1,1 @@
-call Release\MyDotnetSipder.exe
+call Sipder\MyDotnetSipder.exe
